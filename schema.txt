@@ -1,0 +1,41 @@
+@startuml
+equipment o-- category
+equipment o-- items
+items o-- maintenance
+items o-- checked_out
+
+class equipment {
+eq_id : Primary Key
+manufacturer
+model_number
+name
+description
+}
+
+class category {
+name
+eq_id : Foreign Key
+}
+
+class items {
+item_id : Primary Key
+serial_number
+quantity
+eq_id : Foreign Key
+}
+
+class checked_out {
+item_id : Foreign Key
+customer_id : Foreign Key
+date
+quantity
+}
+
+class maintenance {
+item_id : Foreign Key
+date
+quantity
+notes
+}
+
+@enduml
