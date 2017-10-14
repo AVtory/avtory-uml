@@ -1,0 +1,29 @@
+@startuml
+actor admin
+actor user
+
+admin --|> user
+
+user -> (equipment)
+(equipment) --> (add equipment)
+(equipment) --> (delete equipment)
+(equipment) --> (list equipment)
+(equipment) --> (modify equipment)
+
+(add equipment) --> (login)
+(delete equipment) --> (login)
+(list equipment) --> (login)
+(modify equipment) --> (login)
+
+user --> (check in)
+user --> (check out)
+(check in) --> (login)
+(check out) --> (login)
+
+admin --> (user administration)
+(user administration) --> (login)
+
+admin --> (add/remove category)
+(add/remove category) --> (login)
+
+@enduml
